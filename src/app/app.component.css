@@ -1,0 +1,7 @@
+.main-item{
+    background-color: var(--component-background);
+}
+
+.header{
+    background-color: var(--color-primary-dark);
+}
