@@ -1,0 +1,16 @@
+.icon-section{
+    width: var(--header-height);
+    display: flex;
+}
+
+.name-section{
+    color: var(--text-on-primary);
+    height  : var(--header-height);
+    font-size: var(--font-large);
+    font-weight: bold;
+}
+
+.profile-section{
+    width: var(--header-height);
+    display: flex;
+}
