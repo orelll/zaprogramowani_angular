@@ -1,7 +1,35 @@
-.main-item{
+.main-item {
     background-color: var(--component-background);
-}
-
-.header{
+    margin: 20px;
+  }
+  
+  .header {
+    height: var(--header-height);
     background-color: var(--color-primary-dark);
-}
+  }
+  
+  .app-body {
+    height: calc(100% - var(--header-height));
+  }
+  
+  .menu {
+    margin-left: 0;
+    margin-bottom: 0;
+    border-top-right-radius: var(--standard-border-radius);
+  }
+  
+  .main-data {
+    width: 60%;
+    border-radius: var(--standard-border-radius);
+  }
+  
+  .news-list {
+    width: 20%;
+    margin-bottom: 0;
+    margin-right: 0;
+    border-top-left-radius: var(--standard-border-radius);
+    overflow: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  
