@@ -1,1 +1,5 @@
-<p>news-list works!</p>
+<div>
+    <ul *ngFor='let news of newsList'>
+        <app-news-dashboard [newsName]="news"></app-news-dashboard>
+    </ul>
+</div>

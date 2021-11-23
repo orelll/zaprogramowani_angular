@@ -1,0 +1,6 @@
+.dashboard-item{
+    background-color: var(--color-primary-light);
+    margin: 5px;
+    border-radius: var(--standard-border-radius);
+    min-height: 100px;
+}
