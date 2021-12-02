@@ -1,5 +1,7 @@
-<div>
+<div [ngClass]="shouldBeMaximized==true ? 'maximized' : 'minimized'">
     <ul *ngFor='let news of newsList'>
-        <app-news-dashboard [newsName]="news"></app-news-dashboard>
+        <app-news-dashboard [newsName]="news" 
+        (onClick)="changeSize()">
+    </app-news-dashboard>
     </ul>
 </div>

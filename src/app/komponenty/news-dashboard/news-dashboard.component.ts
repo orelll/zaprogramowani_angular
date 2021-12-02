@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-news-dashboard',
@@ -8,10 +8,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NewsDashboardComponent implements OnInit {
 
   @Input() newsName: string = '';
+  @Output() onClick = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleSize(){
+    this.onClick.emit();
+  }
 }
