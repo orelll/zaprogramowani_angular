@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from 'src/app/serwisy/news.service';
 
 @Component({
   selector: 'app-news-list',
@@ -10,7 +11,7 @@ export class NewsListComponent implements OnInit {
   public newsList: string[] = ['test_1', 'test_2', 'test_3', 'test_4','test_1', 'test_2', 'test_3', 'test_4','test_1', 'test_2', 'test_3', 'test_4',];
   public shouldBeMaximized: boolean = true;
 
-  constructor() { }
+  constructor(private newService: NewsService) { }
 
   ngOnInit(): void {
   }
@@ -18,5 +19,6 @@ export class NewsListComponent implements OnInit {
   changeSize():void {
     console.log('hello from parent!');
     this.shouldBeMaximized = false;
+    this.newService.setNewsData("hello world");
   }
 }

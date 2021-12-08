@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-news-dashboard',
-  templateUrl: './news-dashboard.component.html',
-  styleUrls: ['./news-dashboard.component.css']
+  selector: 'app-news-thumbnail',
+  templateUrl: './news-thumbnail.component.html',
+  styleUrls: ['./news-thumbnail.component.css']
 })
-export class NewsDashboardComponent implements OnInit {
+export class NewsThumbnailComponent implements OnInit {
 
   @Input() newsName: string = '';
   @Output() onClick = new EventEmitter<void>();

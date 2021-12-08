@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './komponenty/header/header.component';
 import { NewsListComponent } from './komponenty/news-list/news-list.component';
 import { NewsDataComponent } from './komponenty/news-data/news-data.component';
-import { NewsDashboardComponent } from './komponenty/news-dashboard/news-dashboard.component';
+import { NewsThumbnailComponent } from './komponenty/news-dashboard/news-thumbnail.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { NewsDashboardComponent } from './komponenty/news-dashboard/news-dashboa
     HeaderComponent,
     NewsListComponent,
     NewsDataComponent,
-    NewsDashboardComponent
+    NewsThumbnailComponent
   ],
   imports: [
     BrowserModule
