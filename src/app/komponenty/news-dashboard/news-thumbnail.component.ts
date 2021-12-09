@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class NewsThumbnailComponent implements OnInit {
 
   @Input() newsName: string = '';
-  @Output() onClick = new EventEmitter<void>();
+  @Output() onClick = new EventEmitter<string>();
 
   constructor() { }
 
@@ -16,6 +16,6 @@ export class NewsThumbnailComponent implements OnInit {
   }
 
   toggleSize(){
-    this.onClick.emit();
+    this.onClick.emit(this.newsName);
   }
 }

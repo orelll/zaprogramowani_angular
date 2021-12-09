@@ -16,9 +16,9 @@ export class NewsListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  changeSize():void {
+  changeSize(newsName: string):void {
     console.log('hello from parent!');
     this.shouldBeMaximized = false;
-    this.newService.setNewsData("hello world");
+    this.newService.setNewsData(newsName);
   }
 }
