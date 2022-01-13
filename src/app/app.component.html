@@ -7,7 +7,7 @@
             menu
         </div>
         <div *ngIf='currentNews' class="main-item main-data">
-            <app-news-data></app-news-data>
+            <app-news-data [newsData]=currentNews></app-news-data>
         </div>
         <div [ngClass]="currentNews ? 'list-minimized' : 'list-maximized'" class="main-item news-list">
             <app-news-list></app-news-list>

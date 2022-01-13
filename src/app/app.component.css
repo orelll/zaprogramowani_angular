@@ -2,27 +2,27 @@
     background-color: var(--component-background);
     margin: 20px;
   }
-  
+
   .header {
     height: var(--header-height);
     background-color: var(--color-primary-dark);
   }
-  
+
   .app-body {
     height: calc(100% - var(--header-height));
   }
-  
+
   .menu {
     margin-left: 0;
     margin-bottom: 0;
     border-top-right-radius: var(--standard-border-radius);
   }
-  
+
   .main-data {
     width: 60%;
     border-radius: var(--standard-border-radius);
   }
-  
+
   .news-list {
     width: 20%;
     margin-bottom: 0;
@@ -31,14 +31,15 @@
     overflow: auto;
     padding-top: 15px;
     padding-bottom: 15px;
+    transition: all .8s linear .1s;
   }
-  
+
   .list-minimized {
     width: 20%;
     margin-right: 0;
     border-top-left-radius: var(--standard-border-radius);
   }
-  
+
   .list-maximized {
     width: 75%;
     margin-left: auto;
