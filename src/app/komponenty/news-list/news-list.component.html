@@ -1,4 +1,4 @@
-<div [ngClass]="shouldBeMaximized==true ? 'maximized' : 'minimized'">
+<div>
     <ul *ngFor='let news of newsList'>
         <app-news-thumbnail [newsName]="news" 
         (onClick)="changeSize($event)">

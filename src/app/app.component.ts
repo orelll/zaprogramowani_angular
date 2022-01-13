@@ -10,14 +10,14 @@ export class AppComponent {
   public title: string = 'lekcja 4';
 
   myArray: string[] = ['a', 'b', 'c'];
+  public currentNews: string = undefined;
 
   constructor(private newService: NewsService) {
     console.log(this.myArray);
-    
-    newService.getNewsData$()
-                            .subscribe(
-                                        (newsData: string) => 
-                                        console.log(`new news selected with name ${newsData}`)
-                                      );
+
+    newService.getNewsData$().subscribe((newsData: string) => {
+      this.currentNews = newsData;
+      console.log(`currentNews ${this.currentNews}`);
+    });
   }
 }

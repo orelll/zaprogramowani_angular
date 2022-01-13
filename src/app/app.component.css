@@ -33,3 +33,14 @@
     padding-bottom: 15px;
   }
   
+  .list-minimized {
+    width: 20%;
+    margin-right: 0;
+    border-top-left-radius: var(--standard-border-radius);
+  }
+  
+  .list-maximized {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
