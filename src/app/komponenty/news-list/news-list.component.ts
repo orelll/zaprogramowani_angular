@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FeedProviderService } from 'src/app/serwisy/feed-provider.service';
 import { NewsService } from 'src/app/serwisy/news.service';
 
 @Component({
@@ -11,7 +12,10 @@ export class NewsListComponent implements OnInit {
   public newsList: string[] = ['test_1', 'test_2', 'test_3', 'test_4','test_1', 'test_2', 'test_3', 'test_4','test_1', 'test_2', 'test_3', 'test_4',];
   public shouldBeMaximized: boolean = true;
 
-  constructor(private newService: NewsService) { }
+  constructor(private newService: NewsService,
+    public feedProvider: FeedProviderService) {
+      feedProvider.fetchData();
+    }
 
   ngOnInit(): void {
   }
