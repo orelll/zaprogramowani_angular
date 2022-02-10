@@ -1,16 +1,31 @@
 import { Injectable } from '@angular/core';
 import * as rssParser from 'react-native-rss-parser';
+import { forkJoin } from 'rxjs/internal/observable/forkJoin';
 import { RssFeedData } from '../classes/rss-feed-data';
-
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
 export class FeedProviderService {
 
+  private allAddresses: string[] = [];
+
   constructor() { }
 
-  public async fetchData(): Promise<RssFeedData[]> {
-    return await fetch('http://www.nasa.gov/rss/dyn/breaking_news.rss')
+  public registerAddresses(addresses: string[]):void{
+    this.allAddresses = addresses;
+  }
+
+  public async fetchAllData(): Promise<RssFeedData[]>{
+    return await forkJoin(this.allAddresses.map(add => this.fetchData(add))).pipe(
+      map(data => {
+        return data.reduce((acc, val) => acc.concat(val))
+      })
+    ).toPromise();
+  }
+
+  public async fetchData(addressToLoad: string): Promise<RssFeedData[]> {
+    return await fetch(addressToLoad)
       .then((response) => response.text())
       .then((responseData) => rssParser.parse(responseData))
       .then((rss) => {

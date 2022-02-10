@@ -13,9 +13,12 @@ export class NewsListComponent implements OnInit {
   public newsList: RssFeedData[] = [];//['test_1', 'test_2', 'test_3', 'test_4','test_1', 'test_2', 'test_3', 'test_4','test_1', 'test_2', 'test_3', 'test_4',];
   public shouldBeMaximized: boolean = true;
 
+  private addresses = ['https://gadgets.ndtv.com/rss/feeds', 'http://www.nasa.gov/rss/dyn/breaking_news.rss'];
+
   constructor(private newService: NewsService,
     public feedProvider: FeedProviderService) {
-      feedProvider.fetchData()
+      feedProvider.registerAddresses(this.addresses);
+      feedProvider.fetchAllData()
       .then(data => {
         this.newsList = data;
       })
